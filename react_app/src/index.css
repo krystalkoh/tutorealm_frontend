@@ -16,6 +16,7 @@ code {
     monospace;
 }
 
-.title {
+#title {
   font-family: "DM Serif Display", serif;
+  color: rgb(49, 28, 111);
 }

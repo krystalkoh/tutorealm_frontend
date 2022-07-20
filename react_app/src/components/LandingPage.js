@@ -14,9 +14,18 @@ const LandingPage = () => {
   };
   return (
     <>
-      <div>Introducing</div>
-      <div className="title">TUTOREALM</div>
-      <div class="text-red-700"> Short description here</div>
+      <header class="flex justify-between items-center mt-28">
+        <div class="pl-40 w-3/5 ">
+          <div>Introducing</div>
+          <div id="title" class="text-8xl">
+            TUTOREALM
+          </div>
+          <div class="text-red-700 mt-4"> Short description here</div>
+        </div>
+        <div class="w-2/5 mr-40">
+          <img src="https://i.imgur.com/G7Npd0b.jpg" alt="Login Picture" />
+        </div>
+      </header>
       <br />
       <button onClick={handleLoginClick}>Login</button>
       <button onClick={handleRegisterClick}>Register</button>
