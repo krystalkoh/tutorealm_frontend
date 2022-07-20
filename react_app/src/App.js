@@ -1,8 +1,15 @@
 import "./App.css";
 import React, { Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import NavBar from "./components/NavBar";
+import NavBarParent from "./components/NavBarParent";
+import NavbarTutor from "../componentsTutor/NavbarTutor";
 
+//Main
+const LandingPage = React.lazy(() => import("./components/LandingPage"));
+const LoginPage = React.lazy(() => import("./components/LoginPage"));
+const RegisterPage = React.lazy(() => import("./components/RegisterPage"));
+
+//Parents
 const ParentRegForm = React.lazy(() => import("./components/ParentRegForm"));
 const ParentLogin = React.lazy(() => import("./components/ParentLogin"));
 const MyJobs = React.lazy(() => import("./components/MyJobs"));
@@ -12,24 +19,71 @@ const UpdatePersonalDetails = React.lazy(() =>
 );
 const TutorList = React.lazy(() => import("./components/TutorList"));
 
+//Tutors
+const Registration = React.lazy(() => import("./componentsTutor/Registration"));
+const Login = React.lazy(() => import("./componentsTutor/Login"));
+const AvailableJobs = React.lazy(() =>
+  import("./componentsTutor/AvailableJobs")
+);
+const AppliedJobs = React.lazy(() => import("./componentsTutor/AppliedJobs"));
+const PersonalDetails = React.lazy(() =>
+  import("./componentsTutor/PersonalDetails")
+);
+
 function App() {
   return (
-    <div>
-      <NavBar />
-      <main>
-        <Suspense fallback={<p>Loading...</p>}>
+    <>
+      <div>
+        <main>
           <Routes>
-            <Route path="/" element={<Navigate replace to="/parent/jobs" />} />
-            <Route path="/parent/register" element={<ParentRegForm />} />
-            <Route path="/parent/login" element={<ParentLogin />} />
-            <Route path="/parent/update" element={<UpdatePersonalDetails />} />
-            <Route path="/parent/create" element={<CreateJob />} />
-            <Route path="/parent/jobs" element={<MyJobs />} />
-            <Route path="/parent/applied/:id" element={<TutorList />} />
+            <Route path="/" element={<Navigate replace to="/home" />} />
           </Routes>
-        </Suspense>
-      </main>
-    </div>
+          <Route path="/home" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </main>
+      </div>
+      <div>
+        <NavBarParent />
+        <main>
+          <Suspense fallback={<p>Loading...</p>}>
+            <Routes>
+              <Route
+                path="/"
+                element={<Navigate replace to="/parent/jobs" />}
+              />
+              <Route path="/parent/register" element={<ParentRegForm />} />
+              <Route path="/parent/login" element={<ParentLogin />} />
+              <Route
+                path="/parent/update"
+                element={<UpdatePersonalDetails />}
+              />
+              <Route path="/parent/create" element={<CreateJob />} />
+              <Route path="/parent/jobs" element={<MyJobs />} />
+              <Route path="/parent/applied/:id" element={<TutorList />} />
+            </Routes>
+          </Suspense>
+        </main>
+      </div>
+      <div>
+        <NavbarTutor />
+        <main>
+          <Suspense fallback={<p>Loading...</p>}>
+            <Routes>
+              <Route
+                path="/"
+                element={<Navigate replace to="/tutor/available" />}
+              />
+              <Route path="/tutor/register" element={<Registration />} />
+              <Route path="/tutor/login" element={<Login />} />
+              <Route path="/tutor/available" element={<AvailableJobs />} />
+              <Route path="/tutor/applied" element={<AppliedJobs />} />
+              <Route path="/tutor/profile" element={<PersonalDetails />} />
+            </Routes>
+          </Suspense>
+        </main>
+      </div>
+    </>
   );
 }
 
