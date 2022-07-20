@@ -7,7 +7,7 @@ const MyJobs = () => {
   const [counter, setCounter] = useState(0);
   const navigate = useNavigate();
 
-  const fetchMyJobs = async (input) => {
+  const fetchMyJobs = async () => {
     const res = await fetch("http://localhost:5001/api/parent/created", {
       method: "GET",
       headers: {

@@ -20,9 +20,10 @@ const ParentLogin = (props) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     authService
-      .login(email, password)
+      .loginParent(email, password)
       .then(() => {
         navigate("/parent/jobs");
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err.message);

@@ -19,7 +19,7 @@ const AvailableJobs = () => {
         }
       );
       const data = await response.json();
-      console.log(data.assignments);
+      console.log(data);
       setAvailableJobs(data.assignments);
     } catch (error) {
       console.log("error.message");

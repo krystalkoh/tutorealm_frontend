@@ -46,6 +46,7 @@ const JobCard = (props) => {
     console.log(parentid);
     // setConfirmation(false);
     AppliedJobs(parentid);
+    alert("You have applied a job!");
   };
 
   const handleConfirmation = () => {
@@ -62,7 +63,7 @@ const JobCard = (props) => {
     setConfirmation(false);
   };
 
-  const results = props.data.map((item) => {
+  const results = props.data?.map((item) => {
     return (
       <div>
         <div key={item._id} id={item._id} onClick={previewFx}>
@@ -73,7 +74,7 @@ const JobCard = (props) => {
           <h6>Days: {item.days}</h6>
           <h6>rate: {item.rate}</h6>
           <h6>frequency: {item.frequency}</h6>
-          <h6>parentid: {item._id}</h6>
+          <h6>assignmentid: {item._id}</h6>
           {/* //every single modal should have a state */}
         </div>
 
