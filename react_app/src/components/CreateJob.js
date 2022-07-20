@@ -97,19 +97,28 @@ const CreateJob = () => {
 
   return (
     <>
-      <div>
+      <div
+        class="flex place-content-center mt-5 text-5xl container mx-auto"
+        id="title"
+      >
         <h1>Create Assignment</h1>
       </div>
       {createJob ? (
         <p>You have created an assignment successfully</p>
       ) : (
-        <p>You can create an assignment if you feel like it</p>
+        <p class="flex place-content-center mt-5 text-xl">
+          Create an assignment to find a tutor{" "}
+        </p>
       )}
-      <form onSubmit={handleConfirmModal}>
-        <div>
+      <form
+        onSubmit={handleConfirmModal}
+        class=" place-content-center mt-5 text-xl grid grid-rows-2"
+      >
+        <div class=" flex flex-col">
           <div>
-            <label>Child's name </label>
+            <label class="text-2xl mr-10">Child's name:</label>
             <input
+              class="ml-4 mr-10"
               type="text"
               placeholder="Name of child"
               value={childName}
@@ -118,8 +127,14 @@ const CreateJob = () => {
             />
           </div>
           <div>
-            <label>Select a level: </label>
-            <select name="level" value={level} onChange={handleLevel} required>
+            <label class="text-2xl mr-10">Select a level: </label>
+            <select
+              name="level"
+              value={level}
+              class="ml-4 mr-10"
+              onChange={handleLevel}
+              required
+            >
               <option value="null"> </option>
               <option value="P1">P1</option>
               <option value="P2">P2</option>
@@ -137,8 +152,9 @@ const CreateJob = () => {
             </select>
           </div>
           <div>
-            <label>Subject </label>
+            <label class="text-2xl mr-10">Subject: </label>
             <input
+              class="ml-4 mr-10"
               type="text"
               placeholder="Subject"
               value={subject}
@@ -147,8 +163,9 @@ const CreateJob = () => {
             />
           </div>
           <div>
-            <label>Duration </label>
+            <label class="text-2xl ">Duration: </label>
             <input
+              class="ml-4 mr-10"
               type="text"
               placeholder="Duration"
               value={duration}
@@ -157,8 +174,9 @@ const CreateJob = () => {
             />
           </div>
           <div>
-            <label>Frequency per week</label>
+            <label class="text-2xl mr-10">Frequency per week: </label>
             <input
+              class="ml-4 mr-10"
               type="text"
               placeholder="Frequency"
               value={frequency}
@@ -167,8 +185,9 @@ const CreateJob = () => {
             />
           </div>
           <div>
-            <label>Days </label>
+            <label class="text-2xl mr-10">Days: </label>
             <input
+              class="ml-4 mr-10"
               type="text"
               placeholder="Which days will tuition be conducted?"
               value={days}
@@ -177,8 +196,9 @@ const CreateJob = () => {
             />
           </div>
           <div>
-            <label>Rate per hour ($)</label>
+            <label class="text-2xl mr-10">Rate per hour ($): </label>
             <input
+              class="ml-4 mr-10"
               type="text"
               placeholder="How much are you charging?"
               value={rate}
@@ -188,7 +208,11 @@ const CreateJob = () => {
           </div>
         </div>
         <div>
-          <button type="submit" class="btn">
+          <button
+            type="submit"
+            id="submit"
+            class="rounded  bg-teal-400/50 text-lg px-6 py-2 mt-10 ml-40"
+          >
             Create assignment
           </button>
         </div>
