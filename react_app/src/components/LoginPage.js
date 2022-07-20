@@ -20,7 +20,7 @@ const LoginPage = () => {
         <button
           id="button"
           onClick={handleParentClick}
-          class="place-content-center rounded px-7 py-2 pt-5 mt-4 ml-4 bg-teal-400/50  text-2xl"
+          class="rounded-3xl place-content-center px-7 py-2 pt-5 mt-4 ml-4 bg-teal-400/50  text-2xl"
         >
           <img
             src="https://i.imgur.com/nFbNaxg.png"
@@ -32,7 +32,7 @@ const LoginPage = () => {
         <button
           id="button"
           onClick={handleTutorClick}
-          class="place-content-center rounded px-7 py-2 pt-5 mt-4 ml-20 bg-teal-400/50  text-2xl"
+          class="place-content-center rounded-3xl px-7 py-2 pt-5 mt-4 ml-20 bg-teal-400/50  text-2xl"
         >
           <img
             src="https://i.imgur.com/SadPIF1.png"
