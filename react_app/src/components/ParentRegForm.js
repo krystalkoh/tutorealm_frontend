@@ -63,18 +63,23 @@ const ParentRegForm = () => {
 
   return (
     <>
-      <div>
+      <div class="flex place-content-center mt-5 text-5xl " id="title">
         <h1>Register</h1>
       </div>
       {register ? (
         navigate("/parent/login")
       ) : (
-        <p>Please register for an account</p>
+        <p class="flex place-content-center mt-5 text-lg ">
+          Please register for a parent account
+        </p>
       )}
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <div>
+      <form
+        onSubmit={(e) => handleSubmit(e)}
+        class=" place-content-center mt-5 text-xl grid grid-rows-2"
+      >
+        <div class=" flex flex-col">
           <div>
-            <label>Parent's email </label>
+            <label class="text-2xl mr-10">Parent's email: </label>
             <input
               type="email"
               placeholder="Email"
@@ -85,7 +90,7 @@ const ParentRegForm = () => {
             />
           </div>
           <div>
-            <label>Parent's name </label>
+            <label class="text-2xl mr-10">Parent's name: </label>
             <input
               type="text"
               placeholder="Name of parent"
@@ -96,7 +101,7 @@ const ParentRegForm = () => {
             />
           </div>
           <div>
-            <label>Parent's phone number </label>
+            <label class="text-2xl mr-10">Parent's phone number: </label>
             <input
               type="text"
               placeholder="Phone number"
@@ -107,7 +112,7 @@ const ParentRegForm = () => {
             />
           </div>
           <div>
-            <label>Address </label>
+            <label class="text-2xl mr-10">Address </label>
             <input
               type="text"
               placeholder="Address"
@@ -118,7 +123,7 @@ const ParentRegForm = () => {
             />
           </div>
           <div>
-            <label>Password </label>
+            <label class="text-2xl mr-10">Password </label>
             <input
               type="password"
               placeholder="Password"
@@ -130,7 +135,12 @@ const ParentRegForm = () => {
           </div>
         </div>
         <div>
-          <button type="submit" class="btn" onClick={(e) => handleSubmit(e)}>
+          <button
+            type="submit"
+            id="submit"
+            class="rounded  bg-teal-400/50 text-lg px-6 py-2 mt-10 ml-40"
+            onClick={(e) => handleSubmit(e)}
+          >
             Register
           </button>
         </div>
