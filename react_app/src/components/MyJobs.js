@@ -4,6 +4,7 @@ import authService from "../services/AuthService";
 
 const MyJobs = () => {
   const [joblist, setJoblist] = useState([]);
+  const [counter, setCounter] = useState(0);
   const navigate = useNavigate();
 
   const fetchMyJobs = async (input) => {
@@ -21,27 +22,31 @@ const MyJobs = () => {
 
   useEffect(() => {
     fetchMyJobs();
-  }, []);
+  }, [counter]);
 
   const fetchTutors = (parentid) => {
     console.log(parentid);
     navigate(`/parent/applied/${parentid}`);
   };
 
-  const deleteAll = async () => {
-    const res = await fetch("http://localhost:5001/api/parent/removeJob", {
-      method: "DELETE",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: "Bearer " + authService.getCurrentUser().access,
-      },
-    });
+  const deleteJob = async (id) => {
+    const res = await fetch(
+      `http://localhost:5001/api/parent/removeJob/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: "Bearer " + authService.getCurrentUser().access,
+        },
+      }
+    );
     const jobs = await res.json();
     console.log(jobs);
     setJoblist(jobs.assignments);
+    setCounter(counter + 1);
   };
 
-  const myJobs = joblist.map((job) => {
+  const myJobs = joblist?.map((job) => {
     console.log(job);
     return (
       <div>
@@ -60,7 +65,13 @@ const MyJobs = () => {
           </button>
         </div>
         <div>
-          <button onClick={deleteAll}>Delete</button>
+          <button
+            onClick={() => {
+              deleteJob(job._id);
+            }}
+          >
+            Delete
+          </button>
         </div>
       </div>
     );
