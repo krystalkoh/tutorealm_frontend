@@ -42,16 +42,36 @@ const TutorList = (props) => {
   };
 
   const handleConfirmHiremModal = (e) => {
-    e.preventDefault();
-    setShowConfirmation(true);
+    console.log(id);
+    // e.preventDefault();
+    // setShowConfirmation(true);
+    updateJobAvail(id);
+    alert("Hired a tutor");
   };
 
   const handleHireConfirm = (e) => {
     e.preventDefault();
-    //create function to push tutorid into parent's tutorsHired key in collection
     setShowConfirmation(false);
     navigate("/parent/jobs");
   };
+
+  const updateJobAvail = async (id) => {
+    console.log(`updating job avail`);
+    const res = await fetch(
+      `http://localhost:5001/api/parent/availableJobs/approval`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: "Bearer " + authService.getCurrentUser().access,
+        },
+        body: JSON.stringify({ jobID: id }),
+      }
+    );
+    const job = await res.json();
+    console.log(job);
+  };
+
   const closeModal = (e) => {
     e.preventDefault();
     setShowPreview(false);

@@ -24,9 +24,9 @@ const MyJobs = () => {
     fetchMyJobs();
   }, [counter]);
 
-  const fetchTutors = (parentid) => {
-    console.log(parentid);
-    navigate(`/parent/applied/${parentid}`);
+  const fetchTutors = (assignmentid) => {
+    console.log(assignmentid);
+    navigate(`/parent/applied/${assignmentid}`);
   };
 
   const deleteJob = async (id) => {
@@ -50,7 +50,7 @@ const MyJobs = () => {
     console.log(job);
     return (
       <div>
-        <div id={job.parentid} key={job.parentid}>
+        <div id={job._id} key={job._id}>
           <p>{job.childName}</p>
           <p>{job.level}</p>
           <p>{job.subject}</p>
@@ -58,7 +58,7 @@ const MyJobs = () => {
         <div>
           <button
             onClick={() => {
-              fetchTutors(job.parentid);
+              fetchTutors(job._id);
             }}
           >
             Show tutors
