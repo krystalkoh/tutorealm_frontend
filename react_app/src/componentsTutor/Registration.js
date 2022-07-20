@@ -98,72 +98,90 @@ const Registration = () => {
 
   return (
     <>
-      <div>
+      <div class="flex place-content-center mt-5 text-5xl " id="title">
         <h1>Register</h1>
       </div>
       {register ? (
         navigate("/tutor/login") //might want to see if redirect to available jobs?
       ) : (
-        <p>Please Register For An Account</p>
+        <p class="flex place-content-center mt-5 text-lg ">
+          Please register for a tutor's account
+        </p>
       )}
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <div>
-          <label>Email</label>
-          <div>
-            <input
-              id="email"
-              type="email"
-              placeholder="email"
-              value={email}
-              onChange={(e) => handleEmail(e)}
-              required
-            />
-            <br></br>
-            <select id="genderSelection" value={gender} onChange={handleGender}>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="non-binary">Non-Binary</option>
-            </select>
-            <br></br>
+      <header class="flex justify-between items-center mt-28">
+        <div class="pl-40 w-2/5 ">
+          <img src="      https://i.imgur.com/CU5wBIt.png" />
+        </div>
+        <div class="text-xl w-2/5 mr-40 ml-10">
+          <form onSubmit={(e) => handleSubmit(e)}>
             <div>
+              <label class="text-2xl mr-10">Email: </label>
+
               <input
-                id="password"
-                type="password"
-                placeholder="password"
-                value={password}
-                onChange={(e) => handlePassword(e)}
+                id="email"
+                type="email"
+                placeholder="email"
+                value={email}
+                onChange={(e) => handleEmail(e)}
                 required
               />
-            </div>
-            <div>
-              <input
-                id="name"
-                type="text"
-                placeholder="Name"
-                value={name}
-                onChange={(e) => handleName(e)}
-                required
-              />
-            </div>
-            <div>
-              <input
-                id="edulevel"
-                type="text"
-                placeholder="Highest Education"
-                value={edulevel}
-                onChange={(e) => handleedulevel(e)}
-                required
-              />
-            </div>
-            <div>
-              <input
-                id="phone"
-                type="text"
-                placeholder="Phone"
-                value={phone}
-                onChange={(e) => handlePhone(e)}
-                required
-              />
+              <br></br>
+              <div>
+                <label class="text-2xl mr-10">Password: </label>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="password"
+                  value={password}
+                  onChange={(e) => handlePassword(e)}
+                  required
+                />
+              </div>
+              <label class="text-2xl mr-10">Gender: </label>
+              <select
+                id="genderSelection"
+                value={gender}
+                onChange={handleGender}
+              >
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="non-binary">Non-Binary</option>
+              </select>
+              <br></br>
+              <div>
+                <label class="text-2xl mr-10">Name: </label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => handleName(e)}
+                  required
+                />
+              </div>
+              <div>
+                <label class="text-2xl mr-10">Highest Education: </label>
+                <input
+                  id="edulevel"
+                  type="text"
+                  placeholder="Highest Education"
+                  value={edulevel}
+                  onChange={(e) => handleedulevel(e)}
+                  required
+                />
+              </div>
+              <div>
+                <label class="text-2xl mr-10">Phone: </label>
+                <input
+                  id="phone"
+                  type="text"
+                  placeholder="Phone"
+                  value={phone}
+                  onChange={(e) => handlePhone(e)}
+                  required
+                />
+              </div>
+              <label class="text-2xl mr-10">Address: </label>
               <input
                 id="address"
                 type="text"
@@ -173,12 +191,17 @@ const Registration = () => {
                 required
               />
             </div>
-          </div>
+            <button
+              type="submit"
+              id="submit"
+              class="rounded  bg-teal-400/50 text-lg px-6 py-2 mt-10 ml-40"
+              onClick={(e) => handleSubmit(e)}
+            >
+              Register
+            </button>
+          </form>
         </div>
-        <button type="submit" class="btn" onClick={(e) => handleSubmit(e)}>
-          Register
-        </button>
-      </form>
+      </header>
     </>
   );
 };

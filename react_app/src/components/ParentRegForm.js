@@ -70,7 +70,7 @@ const ParentRegForm = () => {
         navigate("/parent/login")
       ) : (
         <p class="flex place-content-center mt-5 text-lg ">
-          Please register for a parent account
+          Please register for a parent's account
         </p>
       )}
       <header class="flex justify-between items-center mt-28">
