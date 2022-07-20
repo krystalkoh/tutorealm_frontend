@@ -28,7 +28,7 @@ const NavBarParent = () => {
               to="/parent/update"
               className={(navData) => (navData.isActive ? styles.active : "")}
             >
-              Edit Profile
+              Update Profile
             </NavLink>
           </li>
         </ul>

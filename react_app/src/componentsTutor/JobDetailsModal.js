@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styles from "../components/JobDetailsModal.module.css";
+import styles from "./JobDetailsModal.module.css"
 
 // const [data, setData] = useState("");
 

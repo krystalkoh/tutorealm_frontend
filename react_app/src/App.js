@@ -1,8 +1,10 @@
 import "./App.css";
-import React, { Suspense } from "react";
+import React, { useState, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import NavBarParent from "./components/NavBarParent";
-import NavbarTutor from "../componentsTutor/NavbarTutor";
+import NavbarTutor from "./componentsTutor/NavbarTutor";
+import jwtDecode from "jwt-decode";
+import authService from "./services/AuthService";
 
 //Main
 const LandingPage = React.lazy(() => import("./components/LandingPage"));
@@ -37,19 +39,19 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Navigate replace to="/home" />} />
+            <Route path="/home" element={<LandingPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
           </Routes>
-          <Route path="/home" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
         </main>
       </div>
       <div>
-        <NavBarParent />
         <main>
           <Suspense fallback={<p>Loading...</p>}>
+            <NavBarParent />
             <Routes>
               <Route
-                path="/"
+                path="/parent"
                 element={<Navigate replace to="/parent/jobs" />}
               />
               <Route path="/parent/register" element={<ParentRegForm />} />
@@ -66,12 +68,12 @@ function App() {
         </main>
       </div>
       <div>
-        <NavbarTutor />
         <main>
           <Suspense fallback={<p>Loading...</p>}>
+            <NavbarTutor />
             <Routes>
               <Route
-                path="/"
+                path="/tutor"
                 element={<Navigate replace to="/tutor/available" />}
               />
               <Route path="/tutor/register" element={<Registration />} />
