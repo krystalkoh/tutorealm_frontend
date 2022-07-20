@@ -17,13 +17,13 @@ const LandingPage = () => {
       <button
         onClick={handleLoginClick}
         id="button"
-        class="rounded px-5 py-2 mt-4 ml-4 bg-slate-300 text-xl"
+        class="rounded px-5 py-2 mt-4 ml-4 bg-indigo-200 text-xl"
       >
         Login
       </button>
       <button
         id="button"
-        class="rounded px-4 py-2 mt-4 ml-4 bg-slate-300 text-xl"
+        class="rounded px-4 py-2 mt-4 ml-4 bg-violet-300 text-xl"
         onClick={handleRegisterClick}
       >
         Register
@@ -34,7 +34,7 @@ const LandingPage = () => {
             {" "}
             Introducing
           </div>
-          <div id="title" class="text-8xl">
+          <div id="title" class="text-8xl text-indigo-900">
             TUTOREALM
           </div>
           <p class="text-red-700 mt-4 text-lg mr-10" id="button">
