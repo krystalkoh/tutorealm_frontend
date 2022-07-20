@@ -33,27 +33,53 @@ const ParentLogin = (props) => {
 
   return (
     <>
-      <div>
-        <h1>Login</h1>
+      <div class="flex place-content-center mt-5 text-5xl " id="title">
+        <h1>Parent Login</h1>
       </div>
-      {!login && <p>Please provide the correct email and password</p>}
-      <form onSubmit={(e) => handleLogin(e)}>
-        <label>Email </label>
+      <img
+        src="https://i.imgur.com/nFbNaxg.png"
+        width="300px"
+        class="rounded-lg"
+        id="img"
+      ></img>
+
+      {!login && (
+        <p class="flex place-content-center mt-5 text-lg ">
+          Please login with your email and password
+        </p>
+      )}
+      <form
+        id="font"
+        onSubmit={(e) => handleLogin(e)}
+        class="flex place-content-center mt-5 text-xl"
+      >
+        <label class="text-2xl" id="font">
+          Email:{" "}
+        </label>
         <input
+          class="ml-4 mr-10"
           type="email"
           name="email"
           value={email}
           onChange={(e) => handleEmail(e)}
         />
-        <label>Password </label>
+        <label class="text-2xl" id="font">
+          Password:{" "}
+        </label>
         <input
+          class="ml-4"
           type="password"
           name="password"
           value={password}
           onChange={(e) => handlePassword(e)}
         />
         <div>
-          <button type="submit" onClick={(e) => handleLogin(e)}>
+          <button
+            id="submit"
+            class="rounded ml-20 bg-teal-400/50  text-lg px-6 py-2"
+            type="submit"
+            onClick={(e) => handleLogin(e)}
+          >
             Submit
           </button>
         </div>

@@ -34,13 +34,32 @@ const Login = (props) => {
   //Password
   return (
     <>
-      <div>
-        <h1>Login</h1>
+      <div class="flex place-content-center mt-5 text-5xl " id="title">
+        <h1>Tutor Login</h1>
       </div>
-      {!login && <p>Please provide the correct email and password</p>}
-      <form onSubmit={handleLogin}>
-        <label>Login email</label>
+
+      <img
+        src="https://i.imgur.com/SadPIF1.png"
+        width="300px"
+        class="rounded-lg"
+        id="img"
+      ></img>
+      {!login && (
+        <p class="flex place-content-center mt-5 text-lg ">
+          Please login with your email and password
+        </p>
+      )}
+      <form
+        class="flex place-content-center mt-5 text-xl"
+        id="font"
+        onSubmit={handleLogin}
+      >
+        <label class="text-2xl" id="font">
+          {" "}
+          Email:
+        </label>
         <input
+          class="ml-4 mr-10"
           id="email"
           type="email"
           placeholder="email"
@@ -49,8 +68,11 @@ const Login = (props) => {
           required
         />
         <br></br>
-
+        <label class="text-2xl" id="font">
+          Password:
+        </label>
         <input
+          class="ml-4"
           id="password"
           type="password"
           placeholder="password"
@@ -59,7 +81,13 @@ const Login = (props) => {
           required
         />
         <div>
-          <button type="submit">Submit</button>
+          <button
+            id="submit"
+            class="rounded ml-20 bg-teal-400/50  text-lg px-6 py-2"
+            type="submit"
+          >
+            Submit
+          </button>
         </div>
       </form>
     </>

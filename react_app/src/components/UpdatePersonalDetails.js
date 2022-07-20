@@ -69,13 +69,19 @@ const UpdatePersonalDetails = () => {
 
   return (
     <>
-      <div>
+      <div
+        class="flex place-content-center mt-5 text-5xl container mx-auto"
+        id="title"
+      >
         <h1>Update Personal Details</h1>
       </div>
-      <form onSubmit={updatePersonal}>
+      <form
+        onSubmit={updatePersonal}
+        class=" place-content-center mt-5 text-xl grid grid-rows-2"
+      >
         <div>
           <div>
-            <label>Parent's email </label>
+            <label class="text-2xl mr-10">My email: </label>
             <input
               type="email"
               placeholder="Email"
@@ -85,7 +91,7 @@ const UpdatePersonalDetails = () => {
             />
           </div>
           <div>
-            <label>Parent's name </label>
+            <label class="text-2xl mr-10">My name: </label>
             <input
               type="text"
               placeholder="Name of parent"
@@ -95,7 +101,7 @@ const UpdatePersonalDetails = () => {
             />
           </div>
           <div>
-            <label>Parent's phone number </label>
+            <label class="text-2xl mr-10">My phone number: </label>
             <input
               type="text"
               placeholder="Phone number"
@@ -105,7 +111,7 @@ const UpdatePersonalDetails = () => {
             />
           </div>
           <div>
-            <label>Address </label>
+            <label class="text-2xl mr-10">My Address: </label>
             <input
               type="text"
               placeholder="Address"
@@ -115,7 +121,7 @@ const UpdatePersonalDetails = () => {
             />
           </div>
           <div>
-            <label>Password </label>
+            <label class="text-2xl mr-10">My Password: </label>
             <input
               type="password"
               placeholder="Password"
@@ -126,7 +132,12 @@ const UpdatePersonalDetails = () => {
           </div>
         </div>
         <div>
-          <button type="submit" class="btn" onClick={updatePersonal}>
+          <button
+            type="submit"
+            id="submit"
+            class="rounded  bg-teal-400/50 text-lg px-6 py-2 mt-10 ml-40"
+            onClick={updatePersonal}
+          >
             Update
           </button>
         </div>
