@@ -65,27 +65,45 @@ const JobCard = (props) => {
 
   const results = props.data?.map((item) => {
     return (
-      <div>
-        <div key={item._id} id={item._id} onClick={previewFx}>
-          {/* <h6> jobid: {item.assignments._id}</h6> */}
-          <h3>Child Name: {item.childName}</h3>
-          <h6>Level: {item.level}</h6>
-          <h6>Subject: {item.subject}</h6>
-          <h6>Days: {item.days}</h6>
-          <h6>rate: {item.rate}</h6>
-          <h6>frequency: {item.frequency}</h6>
-          <h6>assignmentid: {item._id}</h6>
-          {/* //every single modal should have a state */}
-        </div>
+      <div
+        key={item._id}
+        id={item._id}
+        onClick={previewFx}
+        class=" bg-gray-400/75 antialiased text-gray-900 p-10 grid grid-cols-1"
+      >
+        <div class="h-auto rounded-t text-center overflow-hidden grid grid-cols-2">
+          <img
+            src="https://i.imgur.com/HX0thFe.png"
+            alt=" assignment image"
+            class="place-content-center shadow-md"
+          />
 
-        <div>
-          <button
-            onClick={() => {
-              handleConfirm(item._id);
-            }}
-          >
-            Apply
-          </button>
+          <div class="relative px-4 -mt-16 grid grid-span-2 bg-white/50 rounded-r-3xl shadow-lg">
+            <div class="mt-40 text-2xl" id="font">
+              <h6 class="uppercase"> Child's Name: {item.childName}</h6>
+              <h6>Child's level: {item.level}</h6>
+              <h6>Subjects: {item.subject}</h6>
+              <h6>Frequency: {item.frequency}</h6>
+              <h6>Preferred days: {item.days}</h6>
+              <h6>Rate: {item.rate}</h6>
+            </div>
+
+            <div>
+              <button
+                class="border-solid text-teal-600 text-2xl bg-teal-200  px-5 py-3 inline-block rounded-full  uppercase font-semibold tracking-wide"
+                onClick={() => {
+                  handleConfirm(item._id);
+                }}
+              >
+                Apply
+              </button>
+              {/* </div> */}
+            </div>
+          </div>
+
+          {/* <h6> jobid: {item.assignments._id}</h6> */}
+
+          {/* //every single modal should have a state */}
         </div>
 
         {preview && (
