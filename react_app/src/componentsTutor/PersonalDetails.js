@@ -83,12 +83,21 @@ const PersonalDetails = () => {
 
   return (
     <>
-      <div>
+      <div
+        class="flex place-content-center mt-5 text-5xl container mx-auto"
+        id="title"
+      >
         <h1>Update Personal Details</h1>
       </div>
-      <form className="container" onSubmit={updateProfile}>
+      <form
+        className="container"
+        class=" place-content-center mt-5 text-xl grid grid-rows-2"
+        onSubmit={updateProfile}
+      >
         <div>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" class="text-2xl mr-10">
+            Email
+          </label>
           <div>
             <select
               id="genderSelection"
