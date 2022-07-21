@@ -20,6 +20,10 @@ input {
   border: black 1px solid;
   padding: 2px;
 }
+select {
+  border: black 1px solid;
+  padding: 2px;
+}
 
 #img {
   margin: 0 auto;

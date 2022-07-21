@@ -63,78 +63,93 @@ const ParentRegForm = () => {
 
   return (
     <>
-      <div>
+      <div class="flex place-content-center mt-5 text-5xl " id="title">
         <h1>Register</h1>
       </div>
       {register ? (
         navigate("/parent/login")
       ) : (
-        <p>Please register for an account</p>
+        <p class="flex place-content-center mt-5 text-lg ">
+          Please register for a parent's account
+        </p>
       )}
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <div>
-          <div>
-            <label>Parent's email </label>
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              value={email}
-              onChange={(e) => handleEmail(e)}
-              required
-            />
-          </div>
-          <div>
-            <label>Parent's name </label>
-            <input
-              type="text"
-              placeholder="Name of parent"
-              name="parentName"
-              value={parentName}
-              onChange={(e) => handleParentName(e)}
-              required
-            />
-          </div>
-          <div>
-            <label>Parent's phone number </label>
-            <input
-              type="text"
-              placeholder="Phone number"
-              name="phone"
-              value={phone}
-              onChange={(e) => handlePhone(e)}
-              required
-            />
-          </div>
-          <div>
-            <label>Address </label>
-            <input
-              type="text"
-              placeholder="Address"
-              name="address"
-              value={address}
-              onChange={(e) => handleAddress(e)}
-              required
-            />
-          </div>
-          <div>
-            <label>Password </label>
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={password}
-              onChange={(e) => handlePassword(e)}
-              required
-            />
-          </div>
+      <header class="flex justify-between items-center mt-28">
+        <div class="pl-40 w-2/5 ">
+          <img src="      https://i.imgur.com/CU5wBIt.png" />
         </div>
-        <div>
-          <button type="submit" class="btn" onClick={(e) => handleSubmit(e)}>
-            Register
-          </button>
+
+        <div class="text-xl w-2/5 mr-40 ml-10">
+          <form onSubmit={(e) => handleSubmit(e)}>
+            <div>
+              <div>
+                <label class="text-2xl mr-10">Parent's email: </label>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => handleEmail(e)}
+                  required
+                />
+              </div>
+              <div>
+                <label class="text-2xl mr-10">Parent's name: </label>
+                <input
+                  type="text"
+                  placeholder="Name of parent"
+                  name="parentName"
+                  value={parentName}
+                  onChange={(e) => handleParentName(e)}
+                  required
+                />
+              </div>
+              <div>
+                <label class="text-2xl mr-10">Parent's phone number: </label>
+                <input
+                  type="text"
+                  placeholder="Phone number"
+                  name="phone"
+                  value={phone}
+                  onChange={(e) => handlePhone(e)}
+                  required
+                />
+              </div>
+              <div>
+                <label class="text-2xl mr-10">Address: </label>
+                <input
+                  type="text"
+                  placeholder="Address"
+                  name="address"
+                  value={address}
+                  onChange={(e) => handleAddress(e)}
+                  required
+                />
+              </div>
+              <div>
+                <label class="text-2xl mr-10">Password: </label>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => handlePassword(e)}
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <button
+                type="submit"
+                id="submit"
+                class="rounded  bg-teal-400/50 text-lg px-6 py-2 mt-10 ml-40"
+                onClick={(e) => handleSubmit(e)}
+              >
+                Register
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
+      </header>
     </>
   );
 };

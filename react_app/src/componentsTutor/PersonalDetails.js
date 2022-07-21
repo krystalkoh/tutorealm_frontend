@@ -95,10 +95,22 @@ const PersonalDetails = () => {
         onSubmit={updateProfile}
       >
         <div>
-          <label htmlFor="email" class="text-2xl mr-10">
-            Email
-          </label>
           <div>
+            <label htmlFor="email" class="text-2xl mr-10">
+              Name:
+            </label>
+            <input
+              id="name"
+              type="text"
+              placeholder="Name"
+              value={name}
+              onChange={handleNameChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="email" class="text-2xl mr-10">
+              Gender:
+            </label>
             <select
               id="genderSelection"
               value={gender}
@@ -111,15 +123,9 @@ const PersonalDetails = () => {
             <br></br>
             <div></div>
             <div>
-              <input
-                id="name"
-                type="text"
-                placeholder="Name"
-                value={name}
-                onChange={handleNameChange}
-              />
-            </div>
-            <div>
+              <label htmlFor="email" class="text-2xl mr-10">
+                Highest Education level:
+              </label>
               <input
                 id="edulevel"
                 type="text"
@@ -129,6 +135,9 @@ const PersonalDetails = () => {
               />
             </div>
             <div>
+              <label htmlFor="email" class="text-2xl mr-10">
+                Phone:
+              </label>
               <input
                 id="phone"
                 type="text"
@@ -136,6 +145,12 @@ const PersonalDetails = () => {
                 value={phone}
                 onChange={handlePhoneChange}
               />
+            </div>
+
+            <div>
+              <label htmlFor="email" class="text-2xl mr-10">
+                Address
+              </label>
               <input
                 id="address"
                 type="text"
@@ -147,7 +162,12 @@ const PersonalDetails = () => {
           </div>
         </div>
         <div>
-          <button type="submit" class="btn" onClick={updateProfile}>
+          <button
+            type="submit"
+            id="submit"
+            class="rounded  bg-teal-400/50 text-lg px-6 py-2 mt-10 ml-40"
+            onClick={updateProfile}
+          >
             Update
           </button>
         </div>
