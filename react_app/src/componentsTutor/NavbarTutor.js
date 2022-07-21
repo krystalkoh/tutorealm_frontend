@@ -18,7 +18,7 @@ const NavbarTutor = () => {
                 Available Jobs
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 to="/tutor/applied"
                 className={(navData) =>
@@ -27,7 +27,7 @@ const NavbarTutor = () => {
               >
                 Applied Jobs
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink
                 to="/tutor/profile"

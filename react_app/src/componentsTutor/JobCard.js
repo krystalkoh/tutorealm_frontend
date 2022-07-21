@@ -46,7 +46,7 @@ const JobCard = (props) => {
     console.log(parentid);
     // setConfirmation(false);
     AppliedJobs(parentid);
-    alert("You have applied a job!");
+    alert("You have applied for a job!");
   };
 
   const handleConfirmation = () => {
@@ -106,7 +106,7 @@ const JobCard = (props) => {
           {/* //every single modal should have a state */}
         </div>
 
-        {preview && (
+        {/* {preview && (
           <div>
             <JobDetailsModal
               id={item._id}
@@ -122,7 +122,7 @@ const JobCard = (props) => {
               onClick={closeModal}
             ></JobDetailsModal>
           </div>
-        )}
+        )} */}
 
         {/* {confirmation && (
           <ConfirmationModal

@@ -39,11 +39,11 @@ const LandingPage = () => {
           </div>
           <p class="text-red-700 mt-4 text-lg mr-10" id="button">
             {" "}
-            Tutorealm: an app designed with freelance tutors and vendors in
-            mind. We bring the convenience of a common platform where tutors and
-            vendors can communicate to fulfill their needs. Be it looking for
-            tutees or looking for tutors, we go beyond to connect your worlds
-            together in our realm.
+            An app designed with freelance tutors and students in mind. We bring
+            the convenience of a common platform where tutors and students can
+            communicate to fulfill their needs. Be it looking for tutees or
+            looking for tutors, we go beyond to connect your worlds together in
+            our realm.
           </p>
         </div>
 
