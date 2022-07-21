@@ -25,6 +25,7 @@ const Login = (props) => {
       .then(() => {
         // window.location.reload();
         navigate("/tutor/available");
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err.message);

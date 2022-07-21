@@ -24,9 +24,9 @@ const MyJobs = () => {
     fetchMyJobs();
   }, [counter]);
 
-  const fetchTutors = (parentid) => {
-    console.log(parentid);
-    navigate(`/parent/applied/${parentid}`);
+  const fetchTutors = (assignmentid) => {
+    console.log(assignmentid);
+    navigate(`/parent/applied/${assignmentid}`);
   };
 
   const deleteJob = async (id) => {
@@ -85,6 +85,7 @@ const MyJobs = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     );

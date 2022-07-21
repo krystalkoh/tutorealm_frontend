@@ -19,8 +19,9 @@ const AppliedJobs = (props) => {
         }
       );
       const data = await response.json();
-      console.log(data[0]);
-      setJobsAppliedId(data[0]);
+      console.log(data);
+      console.log(data[0].jobsApplied);
+      setJobsAppliedId(data[0].jobsApplied);
       setToggle(!toggle);
     } catch (error) {
       console.log("error.message");
@@ -43,11 +44,12 @@ const AppliedJobs = (props) => {
             Authorization: "Bearer " + authService.getCurrentUser().access,
           },
           body: JSON.stringify({
-            appliedId: jobsAppliedId.jobsApplied,
+            appliedId: jobsAppliedId,
           }),
         }
       );
       const data = await response.json();
+      console.log(data);
       setJobsApplied(data);
     } catch (error) {
       console.log(error);
@@ -55,49 +57,35 @@ const AppliedJobs = (props) => {
     }
   };
 
-  useEffect(() => {
-    getAppliedJobs();
-  }, [toggle]);
+  // useEffect(() => {
+  //   getAppliedJobs();
+  // }, [toggle]);
 
-  if (jobsApplied) {
-    console.log(jobsApplied);
-    const results = jobsApplied.map((item) => {
-      return (
-        <div class=" bg-gray-400/75 antialiased text-gray-900 p-10 grid grid-cols-1">
-          <div class="h-auto rounded-t text-center overflow-hidden grid grid-cols-2">
-            <img
-              src="https://i.imgur.com/zjkHE5b.png"
-              alt=" assignment image"
-              class="place-content-center shadow-md"
-            />
-            <div class="relative px-4 -mt-16 grid grid-span-2 bg-white/50 rounded-r-3xl shadow-lg">
-              <div class="mt-40 text-2xl" id="font">
-                {/* <h6> tutorsApplied: {item.assignments[0].tutorsApplied} </h6> */}
-                <h6 class="py-2">
-                  Name of Child: {item.assignments[0].childName}
-                </h6>
-                <h6 class="py-2">Days: {item.assignments[0].days}</h6>
-                <h6 class="py-2">Duration: {item.assignments[0].duration}</h6>
-                <h6 class="py-2">
-                  {" "}
-                  Frequency: {item.assignments[0].frequency}
-                </h6>
-                <h6 class="py-2"> Subject: {item.assignments[0].subject}</h6>
-                <h6 class="py-2"> Rate: {item.assignments[0].rate}</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    });
-    return (
-      <>
-        {/* <h1>this is applied jobs page</h1> */}
-        {/* {JSON.stringify(jobsApplied)} */}
-        {results}
-      </>
-    );
-  }
+  // if (jobsApplied) {
+  //   console.log(jobsApplied);
+  //   const results = jobsApplied?.map((item) => {
+  //     console.log(item);
+  //     return (
+  //       <div>
+  //         <h6> tutorsApplied: {item.assignments[12].tutorsApplied} </h6>
+  //         <h6> ChildName: {item.assignments[12].childName}</h6>
+  //         <h6> Days: {item.assignments[12].days}</h6>
+  //         <h6> duration: {item.assignments[12].duration}</h6>
+  //         <h6> frequency: {item.assignments[12].frequency}</h6>
+  //         <h6> subject: {item.assignments[12].subject}</h6>
+  //         <h6> rate: {item.assignments[12].rate}</h6>
+  //       </div>
+  //     );
+  //   });
+  // }
+
+  return (
+    <>
+      <h1>this is applied jobs page</h1>
+      {/* {JSON.stringify(jobsApplied)} */}
+      {/* {results} */}
+    </>
+  );
 };
 
 export default AppliedJobs;
