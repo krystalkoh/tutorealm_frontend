@@ -60,16 +60,40 @@ const TutorList = (props) => {
 
   return (
     <>
-      <h1>Tutors Who Are Interested In This Assignment</h1>
+      <h1 class="flex place-content-center mt-28 text-5xl " id="title">
+        Tutors Who Are Interested In This Assignment
+      </h1>
       {tutorsData &&
         tutorsData.map((tutor) => {
           return (
             <>
-              <div id={tutor.id} key={tutor.id} onClick={handlePreviewModal}>
-                <p>{tutor.gender}</p>
-                <p>{tutor.edulevel}</p>
-                <div>
-                  <button onClick={handleConfirmHiremModal}>Hire</button>
+              <div
+                id={tutor.id}
+                key={tutor.id}
+                onClick={handlePreviewModal}
+                class=" bg-gray-400/75 antialiased text-gray-900 p-10 grid grid-cols-1"
+              >
+                <div class="h-auto rounded-t text-center overflow-hidden grid grid-cols-2">
+                  <img
+                    src="https://i.imgur.com/HX0thFe.png"
+                    alt=" assignment image"
+                    class="place-content-center shadow-md"
+                  />
+
+                  <div class="relative px-4 -mt-16 grid grid-span-2 bg-white/50 rounded-r-3xl shadow-lg">
+                    <div class="mt-40 text-2xl" id="font">
+                      <p>{tutor.gender}</p>
+                      <p>{tutor.edulevel}</p>
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      onClick={handleConfirmHiremModal}
+                      class="border-solid text-teal-600 text-2xl bg-teal-200  px-5 py-3 inline-block rounded-full  uppercase font-semibold tracking-wide"
+                    >
+                      Hire
+                    </button>
+                  </div>
                 </div>
               </div>
 
